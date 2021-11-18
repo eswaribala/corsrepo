@@ -6,7 +6,7 @@ namespace CQRSDemo.Models
     {
 
         public long InvoiceNo { get; set; }
-        public DateTime DOI { get; set; }
+        public string DOI { get; set; }
 
         public long Amount { get; set; }
 
