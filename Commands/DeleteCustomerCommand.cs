@@ -12,7 +12,7 @@ namespace CQRSDemo.Commands
         {
             return new CustomerDeletedEvent
             {
-                Id = this.Id
+                CustomerId = this.Id
             };
         }
     }
