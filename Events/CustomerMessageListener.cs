@@ -1,5 +1,6 @@
 ﻿using CQRSDemo.Models.Mongo;
 using Microsoft.Extensions.Configuration;
+using MongoDB.Bson;
 using Newtonsoft.Json;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
@@ -82,6 +83,7 @@ namespace CQRSDemo.Events
             if (eventArgsDeleted != null)
             {
                 string messageContent = Encoding.UTF8.GetString(eventArgsDeleted.Body);
+                var bsonDocument = BsonDocument.Parse(messageContent);
                 CustomerDeletedEvent _deleted = JsonConvert.DeserializeObject<CustomerDeletedEvent>(messageContent);
                 _repository.Remove(_deleted.CustomerId);
                 subscriptionDeleted.Ack(eventArgsDeleted);
