@@ -6,6 +6,7 @@ namespace CQRSDemo.Models
 {
     public class Invoice
     {
+       // [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public long InvoiceNo { get; set; }
         public string DOI { get; set; }

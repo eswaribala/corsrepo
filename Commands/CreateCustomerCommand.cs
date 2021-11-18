@@ -24,7 +24,9 @@ namespace CQRSDemo.Commands
                 InvoiceList = this.InvoiceList.Select(invoice => 
                 new InvoiceCreatedEvent {
                     Amount= invoice.Amount,
-                    DOI = invoice.DOI }).ToList()
+                    DOI = invoice.DOI,
+                    InvoiceNo=invoice.InvoiceNo
+                }).ToList()
             };
         }
         public Customer ToCustomerRecord()
@@ -36,7 +38,9 @@ namespace CQRSDemo.Commands
                 MobileNo = this.MobileNo,
                 InvoiceList= this.InvoiceList.Select
                 (invoice => new Invoice { Amount = invoice.Amount,
-                    DOI = invoice.DOI }).ToList()
+                    DOI = invoice.DOI,
+                    InvoiceNo=invoice.InvoiceNo
+                }).ToList()
             };
         }
     }
