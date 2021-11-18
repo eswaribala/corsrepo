@@ -15,12 +15,12 @@ namespace CQRSDemo.Models.Mongo
         public long CustomerId { get; set; }
         [BsonElement("Email")]
         public string Email { get; set; }
-        [BsonElement("Name")]
-        public string Name { get; set; }
+        [BsonElement("CustomerName")]
+        public string CustomerName { get; set; }
         [BsonElement("MobileNo")]
         public long MobileNo { get; set; }
-        public int Age { get; set; }
-        [BsonElement("Phones")]
+       
+        [BsonElement("InvoiceList")]
         public List<InvoiceEntity> InvoiceList { get; set; }
     }
 }
